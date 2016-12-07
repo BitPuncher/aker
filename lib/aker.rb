@@ -21,12 +21,22 @@ module Aker
   end
 
   def authorize_by_aker
+    token = fetch_token
+
     authorize(format: configuration.format)
+  end
+
+  def fetch_token
+    case Aker.configuration.
   end
 
   def authorize(format:)
     Tokenizer.new(token: token).decode
   end
+
+
+
+  ## Configuration Stuff
 
   def self.configuration
     Aker::Configuration.config
